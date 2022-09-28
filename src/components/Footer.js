@@ -44,7 +44,7 @@ const SideFooter = () => {
           </div>
           <div className="button">
             <a
-              href="https://github.com/Sydney205"
+              href="https://www.linkedin.com/search/results/all/?keywords=dieke%20sydney&origin=RICH_QUERY_SUGGESTION&position=0&searchId=8ced8cb9-e121-4a6d-b3d5-a9aa17917b4e&sid=Dk*"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -58,9 +58,9 @@ const SideFooter = () => {
         </div>
         <br />
         <p
+          className="display-7"
           style={{
             color: "white",
-            fontSize: "10px !important",
             opacity: "0.5",
           }}
         >

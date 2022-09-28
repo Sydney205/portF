@@ -11,8 +11,9 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import emailjs from "@emailjs/browser";
-// Regular Expressions...
+import Footer from './Footer'
 
+// Regular Expressions...
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{3,23}$/;
 const MESSAGE_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{9,110}$/;
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -74,7 +75,7 @@ const Contact = () => {
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         form.current,
-        process.env.REACT_APP_PUBLIC_KEY,
+        process.env.REACT_APP_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -82,7 +83,9 @@ const Contact = () => {
           setSuccess(true);
         },
         (error) => {
-          alert('Not Sent... Its the network!... Check your internet connection ');
+          alert(
+            "Not Sent... Its the network!... Check your internet connection "
+          );
         }
       );
   };
@@ -158,7 +161,11 @@ const Contact = () => {
 
               <p
                 id="uidnote"
-                className={!userFocus && !validName && user ? "instructions" : "offscreen"}
+                className={
+                  !userFocus && !validName && user
+                    ? "instructions"
+                    : "offscreen"
+                }
               >
                 <FaInfoCircle />
                 This field must not be less than 5 characters
@@ -191,7 +198,11 @@ const Contact = () => {
               <br />
               <p
                 id="emailnote"
-                className={!emailFocus && !validEmail && email ? "instructions" : "offscreen"}
+                className={
+                  !emailFocus && !validEmail && email
+                    ? "instructions"
+                    : "offscreen"
+                }
               >
                 <FaInfoCircle />
                 Invalid email format
@@ -223,7 +234,11 @@ const Contact = () => {
 
               <p
                 id="messagenote"
-                className={!messaeFocus && !validMessage && message ? "instructions" : "offscreen"}
+                className={
+                  !messaeFocus && !validMessage && message
+                    ? "instructions"
+                    : "offscreen"
+                }
               >
                 <FaInfoCircle /> minimum of 10 characters
               </p>
@@ -250,6 +265,10 @@ const Contact = () => {
           </div>
         </section>
       )}
+ <br />
+      <br />
+      <Footer />
+     
     </>
   );
 };
