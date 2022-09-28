@@ -909,7 +909,7 @@ button:disabled {
   }
 
   .footer-wrapper {
-    position: relative;
+    position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: column;
