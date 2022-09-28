@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const SideFooter = () => {
   return (
     <>
-      <section className="footer-wrapper">
+      <footer className="footer-wrapper">
         <div className="button-container">
           <div className="button">
             <a
@@ -66,7 +66,7 @@ const SideFooter = () => {
         >
           &copy; All Rights reserved 2022.
         </p>
-      </section>
+      </footer>
     </>
   );
 };

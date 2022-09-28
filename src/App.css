@@ -826,6 +826,12 @@ button:disabled {
   animation: brackets-animation 3s ease-out infinite;
 }
 
+@keyframes brackets-animation {
+  50% {
+    color: rgb(0, 162, 255);
+  }
+}
+
 .tick {
   transform: scale(1);
   animation: tick 0.5s ease-out 1;
