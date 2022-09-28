@@ -909,9 +909,8 @@ button:disabled {
   }
 
   .footer-wrapper {
-    position: absolute;
-    bottom: 0;
-    display: flex;
+    margin-top: auto;
+     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
