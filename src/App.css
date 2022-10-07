@@ -1143,10 +1143,10 @@ textarea {
 
 @media screen and (max-height: 480px) {
   #home-section {
-    height: 150vh;
+    height: 130vh;
   }
 
   .footer-wrapper {
-    margin-top: 20vh;
+    margin-top: 25vh;
   }
 }
