@@ -11,7 +11,8 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import emailjs from "@emailjs/browser";
-import Footer from './Footer'
+
+
 
 // Regular Expressions...
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{3,23}$/;
@@ -83,9 +84,7 @@ const Contact = () => {
           setSuccess(true);
         },
         (error) => {
-          alert(
-            "Not Sent... Its the network!... Check your internet connection "
-          );
+          alert("Not Sent!.. Try again!");
         }
       );
   };
@@ -138,7 +137,16 @@ const Contact = () => {
               <label htmlFor="user_name">
                 <FaMale /> Enter your name:
               </label>
-              <div className="inputBox">
+              <div
+                className={
+                  userFocus && user && !validName
+                    ? "inputBox_F"
+                    : !userFocus && !validName && user
+                    ? "inputBox_E"
+                    : "inputBox"
+                
+                }
+              >
                 <br />
                 <input
                   type={"text"}
@@ -176,13 +184,22 @@ const Contact = () => {
               <label htmlFor="user_email">
                 <MdEmail /> Enter your email:
               </label>
-              <div className="inputBox">
+              <div
+                className={
+                  emailFocus && email && !validEmail
+                    ? "inputBox_F"
+                    : !emailFocus && !validEmail && email
+                    ? "inputBox_E"
+                    : "inputBox"
+                }
+              >
                 <br />
                 <input
                   type={"email"}
                   id="user_email"
                   name="user_email"
                   ref={emailRef}
+                  autoComplete="on"
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   aria-invalid={validEmail ? "false" : "true"}
@@ -213,7 +230,16 @@ const Contact = () => {
               <label htmlFor="message">
                 <FaPen /> Message:
               </label>
-              <div className="inputBox">
+              <div
+                className={
+                  messaeFocus && message && !validMessage
+                    ? "inputBox_F"
+                    : !messaeFocus && !validMessage && message
+                    ? "inputBox_E"
+                    : "inputBox"
+                
+                }
+              >
                 <br />
                 <textarea
                   type={"text"}
@@ -265,10 +291,7 @@ const Contact = () => {
           </div>
         </section>
       )}
- <br />
-      <br />
-      <Footer />
-     
+      
     </>
   );
 };

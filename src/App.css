@@ -53,7 +53,10 @@ li {
   --default-blue: #0000ff;
   --light-blue: rgb(0, 162, 255);
   --dark-blue: rgb(5, 2, 46);
+  --invalid: rgb(255, 187, 0);
 }
+
+/* --------------------------------------------NAVBAR---------------------------------------------- */
 
 nav {
   top: 0;
@@ -80,7 +83,7 @@ nav ul li {
   border: 2px solid var(--transparent-color);
 }
 
-nav ul li:hover {
+nav ul .nav-item:hover {
   border: 2px solid rgb(0, 142, 255);
   border-radius: 50px;
 }
@@ -226,7 +229,7 @@ nav ul .nav-item:nth-child(3) {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
 }
 
 #home-main-info {
@@ -558,8 +561,9 @@ nav ul .nav-item:nth-child(3) {
   background: #101016;
 }
 
+/* -------------------------------------------THE FORM--------------------------------------------- */
+
 #contact-section form {
-  /* width: fit-content; */
   height: max-content;
   display: flex;
   flex-direction: column;
@@ -567,12 +571,25 @@ nav ul .nav-item:nth-child(3) {
   align-items: flex-start;
 }
 
+/* ----------------------------------------INPUT BOXS CONTAINERS */
 .inputBox {
   position: relative;
   width: 60vw;
 }
 
-.inputBox input {
+.inputBox_F {
+  position: relative;
+  width: 60vw;
+}
+
+.inputBox_E {
+  position: relative;
+  width: 60vw;
+}
+
+/* ----------------------------------INPUTS */
+
+input {
   width: 60vw;
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -595,13 +612,13 @@ nav ul .nav-item:nth-child(3) {
   background: none;
 }
 
-.inputBox input:focus + .placeholder,
-.inputBox input:valid + .placeholder {
-  color: rgb(0, 162, 255) !important;
+.inputBox input:valid + .placeholder,
+.inputBox input:focus + .placeholder {
+  color: rgb(0, 162, 255);
   transform: translateX(10px) translateY(-7px);
   font-size: 0.75em;
   padding: 0 10px;
-  background-color: var(--nav-dark) !important;
+  background-color: var(--nav-dark);
   border-right: 1px solid rgb(0, 162, 255);
   border-left: 1px solid rgb(0, 162, 255);
   opacity: 1;
@@ -612,9 +629,86 @@ nav ul .nav-item:nth-child(3) {
   background-color: var(--nav-dark);
 }
 
-/*   textarea   */
+/* ----------------------------------------VALID INPUTS */
 
-.inputBox textarea {
+.inputBox input:valid + .placeholder {
+  color: #00ff55;
+  border-right: 1px solid #00ff55;
+  border-left: 1px solid #00ff55;
+  background-color: var(--nav-dark);
+
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  opacity: 1;
+}
+
+.inputBox input:valid {
+  border-color: #0f0;
+}
+
+/* ------------------------------------WARNING INPUTS */
+
+.inputBox_F .placeholder,
+.inputBox_F input + .placeholder {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  /* transition: 0.5s; */
+  background: none;
+}
+
+.inputBox_F input:focus + .placeholder,
+.inputBox_F input:empty + .placeholder {
+  color: var(--invalid) !important;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  background-color: var(--nav-dark) !important;
+  border-right: 1px solid var(--invalid);
+  border-left: 1px solid var(--invalid);
+  opacity: 1;
+}
+
+.inputBox_F input:focus {
+  border: 3px solid var(--invalid);
+  background-color: var(--nav-dark);
+}
+
+/* --------------------------------------------ERROR INPUTS */
+
+.inputBox_E .placeholder {
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  color: var(--default-red) !important;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  background-color: var(--nav-dark) !important;
+  border-right: 1px solid var(--default-red);
+  border-left: 1px solid var(--default-red);
+  opacity: 1;
+  /* animation: shake_placeholder 0.65s 10;*/
+  /* margin-top: -3.2rem;  */
+}
+
+.inputBox_E input {
+  position: relative;
+  border: 3px solid var(--default-red);
+  background-color: var(--nav-dark);
+}
+
+.inputBox_E {
+  animation: shake_input 0.15s 3;
+}
+
+/*----------------------------------------TEXTAREA */
+
+textarea {
   width: 60vw;
   height: 20vh;
   padding: 10px;
@@ -638,13 +732,13 @@ nav ul .nav-item:nth-child(3) {
   background: none;
 }
 
-.inputBox textarea:focus + .placeholder,
-.inputBox textarea:valid + .placeholder {
-  color: rgb(0, 162, 255) !important;
+.inputBox textarea:valid + .placeholder,
+.inputBox textarea:focus + .placeholder {
+  color: rgb(0, 162, 255);
   transform: translateX(10px) translateY(-7px);
   font-size: 0.75em;
   padding: 0 10px;
-  background-color: var(--nav-dark) !important;
+  background-color: var(--nav-dark);
   border-right: 1px solid rgb(0, 162, 255);
   border-left: 1px solid rgb(0, 162, 255);
   opacity: 1;
@@ -655,13 +749,87 @@ nav ul .nav-item:nth-child(3) {
   background-color: var(--nav-dark);
 }
 
+/* ---------------------------------------------VALID TEXTAREA */
+
+.inputBox textarea:valid + .placeholder {
+  color: #00ff55;
+  border-right: 1px solid #00ff55;
+  border-left: 1px solid #00ff55;
+  background-color: var(--nav-dark);
+
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  opacity: 1;
+}
+
+.inputBox textarea:valid {
+  border-color: #0f0;
+}
+
+/* ----------------------------------------------WARNING TEXTAREA */
+
+.inputBox_F .placeholder,
+.inputBox_F textarea + .placeholder {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+  background: none;
+}
+
+.inputBox_F textarea:focus + .placeholder,
+.inputBox_F textarea:empty + .placeholder {
+  color: var(--invalid) !important;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75em;
+  padding: 0 10px;
+  background-color: var(--nav-dark) !important;
+  border-right: 1px solid var(--invalid);
+  border-left: 1px solid var(--invalid);
+  opacity: 1;
+}
+
+.inputBox_F textarea:focus {
+  border: 3px solid var(--invalid);
+  background-color: var(--nav-dark);
+}
+
+/* ----------------------------------------------ERROR TEXTAREA */
+
+.inputBox_E textarea {
+  position: relative;
+  border: 3px solid var(--default-red);
+  background-color: var(--nav-dark);
+}
+
+/* -------------------------------------------ANIMATION ERROR */
+
+@keyframes shake_placeholder {
+  50% {
+    margin-left: 1rem;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes shake_input {
+  50% {
+    margin-left: 1rem;
+  }
+}
+
+/* --------------------------------------------FORM BUTTONS */
+
 #contact-section button {
   width: 15vw;
   padding: 10px;
   font-size: 20px;
   font-family: "Lobster", cursive;
-  border: 2px solid var(--transparent-color);
-  border-radius: 50px;
   transform: skewX(20);
   transform: skewX(-20deg);
   -webkit-transform: skewX(-20deg);
@@ -678,17 +846,6 @@ nav ul .nav-item:nth-child(3) {
   -webkit-transform: skewX(20deg);
   -ms-transform: skewX(20deg);
   display: inline-block;
-  border-color: #222;
-}
-
-#contact-section button:hover {
-  color: #fff;
-  transition: 0.5s;
-}
-
-#contact-section form button:disabled:hover {
-  transform: scale(1);
-  cursor: default;
 }
 
 #success-section {
@@ -700,16 +857,57 @@ nav ul .nav-item:nth-child(3) {
   padding: 2rem;
 }
 
-button:disabled {
+#contact-section .send-btn:disabled {
   opacity: 0.5;
+  border: 2px solid #00ff55;
+  background-color: var(--transparent-color);
+}
+
+#contact-section .send-btn:disabled:hover {
+  transform: skewX(20);
+  transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+}
+
+#contact-section .send-btn:disabled a {
+  color: #00ff55 !important;
 }
 
 .send-btn {
   background: #00ff55;
+  border: none;
 }
 
-.clear-btn {
-  background-color: #f23;
+#contact-section .send-btn:hover {
+  background: var(--transparent-color);
+  border: 2px solid #00ff55;
+  transform: skewX(20);
+  transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+}
+
+#contact-section .send-btn:hover a {
+  color: #00ff55;
+}
+
+#contact-section .clear-btn {
+  background: var(--transparent-color);
+  border: 2px solid var(--default-red);
+}
+
+#contact-section .clear-btn a {
+  color: var(--default-red);
+}
+
+#contact-section .clear-btn:hover {
+  background: var(--default-red);
+  border: 2px solid var(--default-red);
+  transform: skewX(20);
+  transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
 }
 
 .show {
@@ -729,7 +927,7 @@ button:disabled {
 }
 
 .instructions {
-  color: orange;
+  color: var(--invalid);
 }
 
 .hide {
@@ -852,8 +1050,22 @@ button:disabled {
   }
 
   nav ul li:hover {
-    border: 2px solid var(--transparent-color);
+    border: 2px solid var(--transparent-color) !important;
     border-radius: 50px;
+  }
+
+  #contact-section .send-btn a {
+    color: #222;
+  }
+
+  #contact-section .send-btn:hover {
+    background: #00ff55;
+    border: none;
+  }
+
+  #contact-section .clear-btn:hover {
+    background: var(--transparent-color);
+    border: 2px solid var(--default-red);
   }
 }
 
@@ -895,11 +1107,19 @@ button:disabled {
     width: 90vw;
   }
 
-  .inputBox input {
+  .inputBox_F {
     width: 90vw;
   }
 
-  .inputBox textarea {
+  .inputBox_E {
+    width: 90vw;
+  }
+
+  input {
+    width: 90vw;
+  }
+
+  textarea {
     width: 90vw;
   }
 
@@ -909,8 +1129,7 @@ button:disabled {
   }
 
   .footer-wrapper {
-    margin-top: auto;
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -919,5 +1138,15 @@ button:disabled {
 
   .footer-wrapper .button:hover {
     width: 60px;
+  }
+}
+
+@media screen and (max-height: 480px) {
+  #home-section {
+    height: 150vh;
+  }
+
+  .footer-wrapper {
+    margin-top: 20vh;
   }
 }
