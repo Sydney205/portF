@@ -229,7 +229,7 @@ nav ul .nav-item:nth-child(3) {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 95vh;
+  height: 100vh;
 }
 
 #home-main-info {
@@ -312,7 +312,7 @@ nav ul .nav-item:nth-child(3) {
     top: 90%;
   }
   50% {
-    top: 95%;
+    top: 93%;
   }
   100% {
     top: 90%;
@@ -936,14 +936,14 @@ textarea {
 
 /* -------------------------------------------FOOTER SECTION------------------------------------------ */
 
-.footer-wrapper {
+#footer-section {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  height: fit-content;
+  height: 10vh;
   width: 100%;
   place-items: center;
   color: rgb(0, 162, 255);
@@ -951,7 +951,7 @@ textarea {
   background: #101016;
 }
 
-.footer-wrapper .button {
+#footer-section .button {
   float: none;
   display: inline-block;
   height: 60px;
@@ -966,28 +966,28 @@ textarea {
   transition: all 0.5s ease-out;
 }
 
-.footer-wrapper .button:hover {
+#footer-section .button:hover {
   width: 200px;
 }
 
-.footer-wrapper a {
+#footer-section a {
   color: rgb(0, 162, 255);
   text-decoration: none;
   font-family: "Lobster", cursive;
 }
 
-.footer-wrapper a:hover {
+#footer-section a:hover {
   text-decoration: underline;
   color: rgb(0, 162, 255);
 }
 
-.footer-wrapper .button-container {
+#footer-section .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer-wrapper .button .icons {
+#footer-section .button .icons {
   text-align: center;
   display: inline-block;
   height: 60px;
@@ -998,14 +998,14 @@ textarea {
   margin-top: 0;
 }
 
-.footer-wrapper .button .icons .icon {
+#footer-section .button .icons .icon {
   text-align: center;
   font-size: 25px;
   line-height: 60px;
   color: rgb(0, 162, 255);
 }
 
-.footer-wrapper button:hover .icon {
+#footer-section button:hover .icon {
   color: #fff;
 }
 
@@ -1128,7 +1128,7 @@ textarea {
     margin-right: 0;
   }
 
-  .footer-wrapper {
+  #footer-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1136,17 +1136,19 @@ textarea {
     height: fit-content;
   }
 
-  .footer-wrapper .button:hover {
+  #footer-section .button:hover {
     width: 60px;
   }
 }
 
 @media screen and (max-height: 480px) {
+  #footer-section {
+    margin-top: 25vh;
+  }
+}
+
+@media screen and (max-height: 330px) {
   #home-section {
     height: 130vh;
-  }
-
-  .footer-wrapper {
-    margin-top: 25vh;
   }
 }

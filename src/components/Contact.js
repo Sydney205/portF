@@ -11,6 +11,7 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import emailjs from "@emailjs/browser";
+import Footer from './Footer'
 
 
 
@@ -291,7 +292,7 @@ const Contact = () => {
           </div>
         </section>
       )}
-      
+      <Footer />
     </>
   );
 };

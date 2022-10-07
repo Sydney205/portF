@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const SideFooter = () => {
   return (
     <>
-      <footer className="footer-wrapper">
+      <footer className="footer-wrapper" id='footer-section'>
         <div className="button-container">
           <div className="button">
             <a
