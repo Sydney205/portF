@@ -225,7 +225,7 @@ nav ul .nav-item:nth-child(3) {
 #home-section {
   position: relative;
   background: linear-gradient(rgba(0, 162, 255, 0.7), rgba(0, 162, 255, 0.7)),
-    url(../public/Background-image.jpg) no-repeat;
+    url(../public/Background-image.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
