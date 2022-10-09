@@ -463,7 +463,7 @@ nav ul .nav-item:nth-child(3) {
   width: 100px;
   height: 40px;
   font-weight: bold;
-  font-family: "Lobster two", cursive;
+  font-family: 'Rubik';
   border: none;
   border-radius: 5px;
   color: var(--default-white);
