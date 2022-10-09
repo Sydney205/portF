@@ -6,14 +6,15 @@ import {
   FaInfoCircle,
   FaJava,
   FaCheckDouble,
+  FaGithub,
+  FaLinkedinIn,
+  FaFacebook,
+  FaTwitter,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import emailjs from "@emailjs/browser";
-import Footer from './Footer'
-
-
 
 // Regular Expressions...
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{3,23}$/;
@@ -145,7 +146,6 @@ const Contact = () => {
                     : !userFocus && !validName && user
                     ? "inputBox_E"
                     : "inputBox"
-                
                 }
               >
                 <br />
@@ -238,7 +238,6 @@ const Contact = () => {
                     : !messaeFocus && !validMessage && message
                     ? "inputBox_E"
                     : "inputBox"
-                
                 }
               >
                 <br />
@@ -284,7 +283,13 @@ const Contact = () => {
                 >
                   <Link to="#">Submit</Link>
                 </button>
-                <button className="clear-btn" onClick={resetForm}>
+                <button
+                  disabled={
+                    !validName || !validEmail || !validMessage ? true : false
+                  }
+                  className="clear-btn"
+                  onClick={resetForm}
+                >
                   <Link to="#">Clear</Link>
                 </button>
               </div>
@@ -292,7 +297,70 @@ const Contact = () => {
           </div>
         </section>
       )}
-      <Footer />
+
+      <div className="footer-button-container">
+        <div className="button">
+          <a
+            href="https://web.facebook.com/people/Dieke-Sydney/100081882726090/"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            <div className="icons">
+              <FaFacebook className="icon" />
+            </div>
+            Dieke Sydney
+          </a>
+        </div>
+        <div className="button">
+          <a
+            href="https://twitter.com/DiekeSydney"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            <div className="icons">
+              <FaTwitter className="icon" />
+            </div>
+            &#64;DiekeSydney
+          </a>
+        </div>
+        <div className="button">
+          <a
+            href="https://github.com/Sydney205"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            <div className="icons">
+              <FaGithub className="icon" />
+            </div>
+            Sydney205
+          </a>
+        </div>
+        <div className="button">
+          <a
+            href="https://www.linkedin.com/search/results/all/?keywords=dieke%20sydney&origin=RICH_QUERY_SUGGESTION&position=0&searchId=8ced8cb9-e121-4a6d-b3d5-a9aa17917b4e&sid=Dk*"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            {" "}
+            <div className="icons">
+              <FaLinkedinIn className="icon" />
+            </div>
+            Dieke Sydney
+          </a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <p
+        className="display-7"
+        style={{
+          color: "white",
+          opacity: "0.5",
+          textAlign: "center",
+        }}
+      >
+        &copy; All Rights reserved 2022.
+      </p>
     </>
   );
 };

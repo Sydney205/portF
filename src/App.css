@@ -123,7 +123,6 @@ nav ul .nav-item:nth-child(3) {
   top: 0;
   left: 0;
   transition: 850ms;
-  overflow: hidden;
   grid-area: sidebar;
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
@@ -556,7 +555,7 @@ nav ul .nav-item:nth-child(3) {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 150vh;
+  height: max-content;
   color: #fff;
   background: #101016;
 }
@@ -857,22 +856,7 @@ textarea {
   padding: 2rem;
 }
 
-#contact-section .send-btn:disabled {
-  opacity: 0.5;
-  border: 2px solid #00ff55;
-  background-color: var(--transparent-color);
-}
-
-#contact-section .send-btn:disabled:hover {
-  transform: skewX(20);
-  transform: skewX(-20deg);
-  -webkit-transform: skewX(-20deg);
-  -ms-transform: skewX(-20deg);
-}
-
-#contact-section .send-btn:disabled a {
-  color: #00ff55 !important;
-}
+/* -----------------------------------------Send button */
 
 .send-btn {
   background: #00ff55;
@@ -892,22 +876,62 @@ textarea {
   color: #00ff55;
 }
 
-#contact-section .clear-btn {
-  background: var(--transparent-color);
-  border: 2px solid var(--default-red);
+#contact-section .send-btn:disabled {
+  opacity: 0.5;
+  border: 2px solid #00ff55;
+  background-color: var(--transparent-color);
 }
 
-#contact-section .clear-btn a {
-  color: var(--default-red);
-}
-
-#contact-section .clear-btn:hover {
-  background: var(--default-red);
-  border: 2px solid var(--default-red);
+#contact-section .send-btn:disabled:hover {
   transform: skewX(20);
   transform: skewX(-20deg);
   -webkit-transform: skewX(-20deg);
   -ms-transform: skewX(-20deg);
+  background-color: var(--transparent-color);
+  border: 2px solid #00ff55;
+}
+
+#contact-section .send-btn:disabled a {
+  color: #00ff55 !important;
+}
+
+/* --------------------------------Clear button */
+
+.clear-btn {
+  background: #f23;
+  border: none;
+}
+
+#contact-section .clear-btn:hover {
+  background: var(--transparent-color);
+  border: 2px solid #f23;
+  transform: skewX(20);
+  transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+}
+
+#contact-section .clear-btn:hover a {
+  color: #f23;
+}
+
+#contact-section .clear-btn:disabled {
+  opacity: 0.5;
+  border: 2px solid #f23;
+  background-color: var(--transparent-color);
+}
+
+#contact-section .clear-btn:disabled:hover {
+  transform: skewX(20);
+  transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  background-color: var(--transparent-color);
+  border: 2px solid #f23;
+}
+
+#contact-section .clear-btn:disabled a {
+  color: #f23 !important;
 }
 
 .show {
@@ -936,22 +960,15 @@ textarea {
 
 /* -------------------------------------------FOOTER SECTION------------------------------------------ */
 
-#footer-section {
-  position: relative;
+.footer-button-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  height: 10vh;
-  width: 100%;
-  place-items: center;
-  color: rgb(0, 162, 255);
-  padding: 20px;
-  background: #101016;
+  height: fit-content;
+  margin-top: 20vh;
 }
 
-#footer-section .button {
+.footer-button-container .button {
   float: none;
   display: inline-block;
   height: 60px;
@@ -966,28 +983,28 @@ textarea {
   transition: all 0.5s ease-out;
 }
 
-#footer-section .button:hover {
+.footer-button-container .button:hover {
   width: 200px;
 }
 
-#footer-section a {
+.footer-button-container a {
   color: rgb(0, 162, 255);
   text-decoration: none;
   font-family: "Lobster", cursive;
 }
 
-#footer-section a:hover {
+.footer-button-container a:hover {
   text-decoration: underline;
   color: rgb(0, 162, 255);
 }
 
-#footer-section .button-container {
+.footer-button-container .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#footer-section .button .icons {
+.footer-button-container .button .icons {
   text-align: center;
   display: inline-block;
   height: 60px;
@@ -998,14 +1015,14 @@ textarea {
   margin-top: 0;
 }
 
-#footer-section .button .icons .icon {
+.footer-button-container .button .icons .icon {
   text-align: center;
   font-size: 25px;
   line-height: 60px;
   color: rgb(0, 162, 255);
 }
 
-#footer-section button:hover .icon {
+.footer-button-container button:hover .icon {
   color: #fff;
 }
 
@@ -1054,6 +1071,11 @@ textarea {
     border-radius: 50px;
   }
 
+  .sidebar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
   #contact-section .send-btn a {
     color: #222;
   }
@@ -1063,9 +1085,22 @@ textarea {
     border: none;
   }
 
+  #contact-section .send-btn:hover a {
+    color: #222;
+  }
+
   #contact-section .clear-btn:hover {
     background: var(--transparent-color);
     border: 2px solid var(--default-red);
+  }
+
+  .footer-button-container {
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: 15vh;
   }
 }
 
@@ -1128,21 +1163,20 @@ textarea {
     margin-right: 0;
   }
 
-  #footer-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-  }
-
-  #footer-section .button:hover {
+  .footer-button-container .button:hover {
     width: 60px;
   }
 }
 
 @media screen and (max-height: 480px) {
-  #footer-section {
+
+  .sidebar {
+    height: 150vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .footer-button-container {
     margin-top: 25vh;
   }
 }
