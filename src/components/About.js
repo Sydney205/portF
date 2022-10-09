@@ -9,8 +9,8 @@ function About() {
         <div className="about-headers">
           <h1 className="display-1">About ME!</h1>
           <Typed
-            className="lead"
-            style={{ fontFamily: "Rubik", color: "white" }}
+            className="lead display-7"
+            style={{ fontFamily: "Rubik", color: "rgb(0, 162, 255)" }}
             strings={[
               `Tap the card to view more
 
