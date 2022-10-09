@@ -25,7 +25,7 @@ const Sidebar = (props) => {
                 </div>
               </div>
             </li>
-            <li className="sidebar-text">
+            <li className="sidebar-text display-7">
               <Link to="/">
                 <span
                   style={{
@@ -38,7 +38,7 @@ const Sidebar = (props) => {
                 <span>Home</span>
               </Link>
             </li>
-            {/* {/* <li className="sidebar-text">
+            {/* {/* <li className="sidebar-text display-7">
               <Link to="/Projects">
                 <span
                   style={{
@@ -51,7 +51,7 @@ const Sidebar = (props) => {
                 <span>Projects</span>
               </Link>
             </li> */}
-             <li className="sidebar-text">
+             <li className="sidebar-text display-7">
               <HashLink to="#about-section">
                 <span
                   style={{
@@ -64,7 +64,7 @@ const Sidebar = (props) => {
                 <span>About ME!</span>
               </HashLink>
             </li> 
-            <li className="sidebar-text">
+            <li className="sidebar-text display-7">
               <a
                 href="https://github.com/Sydney205"
                 target={"_blank"}
@@ -81,7 +81,7 @@ const Sidebar = (props) => {
                 <span>GitHub</span>
               </a>
             </li>
-            <li className="sidebar-text">
+            <li className="sidebar-text display-7">
               <a
                 href="https://www.linkedin.com/search/results/all/?keywords=dieke%20sydney&origin=RICH_QUERY_SUGGESTION&position=0&searchId=8ced8cb9-e121-4a6d-b3d5-a9aa17917b4e&sid=Dk*"
                 target="_blank"
