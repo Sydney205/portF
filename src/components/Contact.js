@@ -18,7 +18,7 @@ import emailjs from "@emailjs/browser";
 
 // Regular Expressions...
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{3,23}$/;
-const MESSAGE_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{9,110}$/;
+const MESSAGE_REGEX = /^[a-zA-Z][a-zA-Z0-9-_!@#$%&*()<>:;'",./ ]{9,210}$/;
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
 const Contact = () => {
@@ -266,7 +266,7 @@ const Contact = () => {
                     : "offscreen"
                 }
               >
-                <FaInfoCircle /> minimum of 10 characters
+                <FaInfoCircle /> minimum of 10 characters and maximun of 100 characters
               </p>
               <br />
 
