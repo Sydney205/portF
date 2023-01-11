@@ -1069,7 +1069,7 @@ textarea {
   }
 
   .card-box {
- transform: scale(0.9);
+ transform: scale(0.9) !important;
 } 
   #contact-section .send-btn a {
     color: #222;
